@@ -38,7 +38,7 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr ondblclick="pasarFila(this)">
+                                <tr onclick="pasarFila(this)">
                                     <td id="claveTabla">@item.Clave</td>
                                     <td id="descripcionTabla">@item.Nombre</td>
                                     <td id="comentarioTabla">@item.Correo</td>

@@ -70,7 +70,7 @@ namespace WebReclutaApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult RequisicionesTalento(string clave, string puesto, string empresa, string departamento, string oficina, string tipo, string modalidad, string descripcion, string estatus, IFormFile[] archivos)
+        public IActionResult RequisicionesTalento(string clave, string puesto, string empresa, string departamento, string oficina, string tipo, string modalidad, string descripcion, string estatus)
         {
             List<RequisicionesTalento> ListaRequisicionesTalento = new List<RequisicionesTalento>();
             string connectionString = Configuration["ConnectionStrings:ConexionWebRecluta"];
@@ -103,34 +103,7 @@ namespace WebReclutaApp.Controllers
                     command.Parameters.AddWithValue("@estatus", String.IsNullOrEmpty(estatus) ? 1 : estatus);
                     command.ExecuteNonQuery();
                 }
-                for (int i = 0; i < archivos.Length; i++)
-                {
-                    Archivos archivo = new Archivos();
-                    archivo.Fecha_Entrada = DateTime.Now;
-                    archivo.Nombre_Archivo = Path.GetFileNameWithoutExtension(archivos[i].FileName);
-                    archivo.Extension = Path.GetExtension(archivos[i].FileName);
-                    archivo.Formato = MimeMapping.MimeUtility.GetMimeMapping(archivos[i].FileName);
-                    double tamanio = archivos[i].Length;
-                    tamanio = tamanio / 1000000.0;
-                    archivo.Tamanio = Math.Round(tamanio, 2);
-                    Stream fs = archivos[i].OpenReadStream();
-                    BinaryReader br = new BinaryReader(fs);
-                    archivo.Archivo = br.ReadBytes((Int32)fs.Length);
-                    string sql = "insert into WREC_ARCHIVOS(Nombre_Archivo, Extension, Formato, Fecha_Entrada, Archivo, Tamanio, Folio_relacion) values " +
-                            "(@nombreArchivo, @extension, @formato, @fechaEntrada, @archivo, @tamanio, @foliorelacion)";
-                    using (SqlCommand cmd = new SqlCommand(sql, connection))
-                    {
-                        cmd.Parameters.Add("@nombreArchivo", SqlDbType.VarChar, 100).Value = archivo.Nombre_Archivo;
-                        cmd.Parameters.Add("@extension", SqlDbType.VarChar, 5).Value = archivo.Extension;
-                        cmd.Parameters.Add("@formato", SqlDbType.VarChar, 200).Value = archivo.Formato;
-                        cmd.Parameters.Add("@fechaEntrada", SqlDbType.DateTime).Value = archivo.Fecha_Entrada;
-                        cmd.Parameters.Add("@archivo", SqlDbType.Image).Value = archivo.Archivo;
-                        cmd.Parameters.Add("@tamanio", SqlDbType.Float).Value = archivo.Tamanio;
-                        cmd.Parameters.Add("@foliorelacion", SqlDbType.Float).Value = clave;
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.WREC_REQ_TALENTOS", connection))
+                using(SqlCommand command = new SqlCommand("SELECT * FROM dbo.WREC_REQ_TALENTOS", connection))
                 {
                     SqlDataReader dataReader = command.ExecuteReader();
                     while (dataReader.Read())

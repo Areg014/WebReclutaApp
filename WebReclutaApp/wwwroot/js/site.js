@@ -397,7 +397,7 @@ let usuarioPermisos = "";
 let nombrePermisos = "";
 
 function pasarFila(row) {
-    if (document.title = "Requisiciones Talento") {
+    if (document.title=="Requisiciones Talento") {
         formEnable(1, 1, 1, 1, 1, 1, 1, 1);
         buttonsEnable(0, 1, 1, 1, 1, 1);
         modifyMagGlass(0);
@@ -431,7 +431,7 @@ function pasarFila(row) {
         modal.style.display = "none";
         document.getElementById("estatusInput").setAttribute("value", "2");
     }
-    else if (document.title != "Permisos") {
+    else if(document.title!="Permisos") {
         formEnable(1, 1, 1, 1, 1, 1, 1, 1);
         buttonsEnable(0, 1, 1, 1, 1, 1);
         modifyMagGlass(0);
@@ -451,6 +451,7 @@ function pasarFila(row) {
         console.log(document.getElementById("estatusInput").value);
     }
     else {
+        console.log("Entra 4");
         let i = 0;
         let cells = row.getElementsByTagName("TD");
         for (let cell of cells) {
