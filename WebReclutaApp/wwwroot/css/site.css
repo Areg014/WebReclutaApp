@@ -1,0 +1,701 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+section .signin {
+    position: absolute;
+    width: 400px;
+    background: #fff;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+
+section .signin .content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+section .signin .content h2 {
+    font-size: 2em;
+    color: #17b8ff;
+    text-transform: uppercase;
+}
+
+section .signin .content #form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+section .signin .content #form .inputBox {
+    position: relative;
+    width: 100%;
+}
+
+section .signin .content #form .inputBox input {
+    position: relative;
+    width: 100%;
+    background: #d6d6d6;
+    border: none;
+    outline: none;
+    padding: 25px 10px 7.5px;
+    border-radius: 4px;
+    color: #000;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+section .signin .content #form .inputBox i {
+    position: absolute;
+    left: 0;
+    padding: 15px 10px;
+    font-style: normal;
+    color: #000;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.signin .content #form .inputBox input:focus ~ i,
+.signin .content #form .inputBox input:valid ~ i,
+.signin .content #form .inputBox input:disabled {
+    transform: translateY(-7.5px);
+    font-size: 0.8em;
+    color: #000;
+}
+
+.signin .content #form .links {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signin .content #form .links a {
+    color: #000;
+    text-decoration: none;
+}
+
+.signin .content #form .links a:nth-child(2) {
+    color: #17b8ff;
+    font-weight: 600;
+}
+
+.signin .content #form .inputBox input[type="submit"] {
+    padding: 10px;
+    background: #17b8ff;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.35em;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition-duration: 1s;
+    border-radius: 20px;
+}
+
+.signin .content #form .inputBox input[type="submit"]:hover {
+    color: #17b8ff;
+    background: #fff;
+    box-shadow: 1px 1px 35px #17b8ff;
+    transition-duration: 1s;
+}
+
+input[type="submit"]:active {
+    opacity: 0.6;
+}
+
+section {
+    position: absolute;
+    width: 100vw;
+    height: 82%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#17b8ff,#fff);
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+section span {
+    position: relative;
+    display: block;
+    width: calc(6.25vw - 2px);
+    height: calc(6.25vw - 2px);
+    background: #d6d6d6;
+    z-index: 2;
+    transition: 1.5s;
+}
+
+section span:hover {
+    background: #17b8ff;
+    transition: 0s;
+}
+
+header img {
+    max-width: 300px;
+}
+
+header .container {
+    margin-left: 0px;
+}
+
+header {
+    height: 10%;
+}
+
+footer .container {
+    text-align: right;
+    margin-right: 15px;
+}
+
+section .boxesScreen span {
+    top:10%;
+    left: 60px;
+}
+
+section .contentBoxes {
+    position: absolute;
+    z-index: 1000;
+}
+
+section .contentBoxes .boxes {
+    position: relative;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item {
+    background: #fff;
+    padding: 50px;
+    width: 400px;
+    height: 200px;
+    border: 0px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 35px rgba(0,0,0,9);
+    transform: translate(0px, 5px);
+    transition: all .3s cubic-bezier(0.25, 0.1, 0.58, 1);
+}
+
+.grid-item:hover {
+    transform: translate(0px, -5px);
+    cursor: pointer;
+    transition: all .3s cubic-bezier(0.25, 0.1, 0.58, 1);
+}
+
+.grid-container {
+    display: grid;
+    gap: 50px;
+    row-gap: 100px;
+    grid-template-columns: auto auto auto;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.grid-text {
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bolder;
+    color: #1f3665;
+    font-size: 20px;
+}
+
+.grid-icon {
+    font-size: 100px;
+}
+
+.formulario-pantallas {
+    position: absolute;
+    z-index: 1000;
+    width: 50%;
+    height: 80%;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0,0,0,9);
+    padding:15px;
+    padding-top: 5px;
+}
+
+.formulario-pantallas img {
+    margin-left: 5px;
+    max-height: 30%;
+    max-width: 60%;
+    margin-bottom: -2.5%;
+}
+
+hr {
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-right: 8%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.formulario-pantallas .main-menu {
+    height: 100%;
+    top: 0%;
+    bottom: 0%;
+    left:unset;
+    right: -1px;
+}
+.formulario-pantallas .main-menu i{
+    color: var(--iconos-color);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.formulario-pantallas .main-menu i:hover {
+    color: var(--iconos-hover-color);
+}
+
+.formulario-pantallas .main-menu, .formulario-pantallas nav.main-menu {
+    width: 60px;
+}
+
+.formulario-pantallas .main-menu:hover, .formulario-pantallas nav.main-menu.expanded {
+    width: 60px;
+    overflow: hidden;
+}
+
+.formulario-pantallas .main-menu li {
+    height: 50px;
+}
+
+.formulario-pantallas .main-menu li:hover > a, nav.main-menu li.active > a, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .no-touch .dashboard-page nav.dashboard-menu ul li:hover a, .dashboard-page nav.dashboard-menu ul li.active a {
+    color: #17b8ff;
+    background-color: #fff;
+}
+
+.formulario-pantallas form nav li {
+    top: 0px;
+    height: 50px;
+    border-block-color: transparent;
+}
+
+.formulario-pantallas form nav li input {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.formulario-pantallas form #form {
+    width: 80%;
+    height: 310px;
+    margin-left: 50px;
+    margin-top: 30px;
+    background: #f7f7f7;
+}
+
+.formulario-pantallas #form .inputBox .clave {
+    width: 50%;
+}
+
+/*////////////////////////////////*/
+
+
+.formulario-pantallas #form .inputBox {
+    top: 12%;
+    left: 5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+    .formulario-pantallas #form .inputBox textarea {
+        position: relative;
+        width: 90%;
+        background: #c9c9c9;
+        outline: none;
+        padding: 25px 10px 7.5px;
+        border-radius: 0px;
+        color: #000;
+        font-weight: 500;
+        font-size: 1em;
+        border: 0px;
+        border-bottom: 2px solid #000;
+    }
+    
+.formulario-pantallas #form .inputBox i {
+    position: absolute;
+    left: 0;
+    padding: 15px 10px;
+    font-style: normal;
+    color: #000;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.formulario-pantallas .inputBox textarea:focus ~ i, .formulario-pantallas .inputBox textarea:valid ~ i {
+    transform: translateY(-7.5px);
+    font-size: 0.8em;
+    color: #000;
+}
+
+.formulario-pantallas #form .inputBox {
+    position: relative;
+    width: 100%;
+}
+
+.botones-menu-lateral {
+    border-block-color: transparent;
+    background-color: var(--menu-background-color);
+    padding-top: unset;
+    padding-bottom: unset;
+    padding-left: unset;
+    padding-right: unset;
+    height: 50px;
+    width: 60px;
+    border: 0px;
+}
+
+.botones-menu-lateral:hover {
+    background-color: var(--boton-hover-color);
+}
+
+.boton-regresar {
+    margin-top: 62px;
+}
+
+.formulario-pantallas form .main-menu ul {
+    margin-top: 56px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    border: 0px;
+}
+
+.formulario-pantallas form .main-menu li {
+    width: 100%;
+}
+
+.formulario-pantallas form .main-menu {
+    background-color: #17b8ff;
+    border: 0px;
+}
+
+#tablaPDF {
+    font-size: 15px;
+}
+
+/*Modal*/
+
+.closeList {
+    all: unset;
+}
+
+.closeList:hover {
+    background-color: #fefefe;
+}
+
+.modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1003; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    padding-bottom: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.listModal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 95%;
+    border-radius: 10px;
+    color: #1f3665;     
+}
+
+.listModal-content hr {
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 1%;
+}
+
+thead {
+    border-top: hidden;
+}
+
+th {
+    border-top: hidden;
+    color: #1861ac;
+}
+
+tr {
+    border: 5px;
+}
+
+
+/* The Close Button */
+.closeList {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeList:hover,
+.closeList:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*TableStyle*/
+
+
+.tableStyle {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tableStyle td, .tableStyle th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 1%;
+}
+
+.tdStyle {
+    background-color: #f2f2f2;
+}
+
+.tableStyle tr:hover {
+    background-color: #ddd;
+}
+
+.tableStyle th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #17b8ff;
+    color: white;
+}
+
+table {
+    top: 20px;
+    overflow: scroll;
+    display: block;
+    height: 70%;
+    border-collapse: collapse;
+    width: 100%; 
+}
+thead th{
+    position: sticky;
+    top: 0;
+}
+
+.fixTableHead {
+    overflow-y: auto;
+}
+
+/**/
+
+#exportExcel {
+    margin-left: 45px;
+    position: relative;
+    padding: 1px 10px 1px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    font-size: 15px;
+    color: green;
+}
+
+#exportExcel::after, #exportExcel:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      border: 2px solid;
+      transition: all 0.6s ease;
+      border-radius: 2px;
+}
+    
+#exportExcel::after {
+      bottom: 0;
+      right: 0;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-bottom-color: green;
+      border-right-color: green;
+}
+
+#exportExcel::before {
+      top: 0;
+      left: 0;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      border-top-color: green;
+      border-left-color: green;
+}
+
+#exportExcel:hover:after,
+#exportExcel:hover:before {
+      width: 100%;
+      height: 100%;
+}
+
+#selectFiltro {
+    width: 30%;
+}
+
+input#searchBar {
+    margin-left: 5px;
+    margin-right: 45px;
+}
+
+#encabezadoBusqueda {
+    max-width: 45%;
+    margin-bottom: -2.5%;
+}
+
+#accionEstatus {
+    color: #17b8ff;
+    margin-left: 75%;
+    text-align: right;
+}
+
+#screenForm {
+    margin-top: -2%;
+}
+
+.formulario-pantallas #form .inputBox input {
+    position: relative;
+    width: 90%;
+    outline: none;
+    padding: 25px 10px 7.5px;
+    border-radius: 0px;
+    color: #000;
+    font-weight: 500;
+    font-size: 1em;
+    border: 0px;
+    border-bottom: 2px solid #000;
+}
+
+.formulario-pantallas .inputBox input:focus ~ i, .formulario-pantallas .inputBox input:valid ~ i {
+    transform: translateY(-7.5px);
+    font-size: 0.8em;
+    color: #000;
+}
+
+.toggler-wrapper.style-1 input[type="checkbox"]:checked + .toggler-slider .toggler-knob {
+    left: calc(100% - 19px - 3px);
+}
+
+.toggler-wrapper.style-1 .toggler-knob {
+    width: calc(25px - 6px);
+    height: calc(25px - 6px);
+    border-radius: 50%;
+    left: 3px;
+    top: 3px;
+    background-color: #fff;
+}

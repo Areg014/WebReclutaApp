@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/menu.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.56/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script type="text/javascript" src="~/js/html2canvas.min.js"></script>
+</head>
+<body onload="buttonsEnable(1, 0, 0, 1, 1, 1); formEnable(0, 0, 0, 0, 0, 0, 0, 0)">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+            <div class="container">
+                <img src="~/images/logo_integracorp.png" />
+            </div>
+        </nav>
+    </header>
+    <div class="area"></div>
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <a asp-controller="Inicio" asp-action="Index">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                        Inicio
+                    </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a asp-controller="GestionTalentos" asp-action="Index">
+                    <i class="fa fa-globe fa-2x"></i>
+                    <span class="nav-text">
+                        Gestión de Talentos
+                    </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="#">
+                    <i class="fa fa-comments fa-2x"></i>
+                    <span class="nav-text">
+                        Solicitudes y Contrataciones
+                    </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a href="#">
+                    <i class="fa fa-user fa-2x"></i>
+                    <span class="nav-text">
+                        Gestión de Enpleados
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-book fa-2x"></i>
+                    <span class="nav-text">
+                        Reportes
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-folder-open fa-2x"></i>
+                    <span class="nav-text">
+                        Archivos Digitales
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="ControlUsuarios" asp-action="Index">
+                    <i class="fa fa-users fa-2x"></i>
+                    <span class="nav-text">
+                        Control de Usuarios
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="ConfiguracionGeneral" asp-action="Index">
+                    <i class="fa fa-cogs fa-2x"></i>
+                    <span class="nav-text">
+                        Configuración General
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <ul class="logout">
+            <li>
+                <a asp-controller="Home" asp-action="Index">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Cerrar sesión
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <main role="main">
+            @RenderBody()
+            <script>
+            </script>
+        </main>
+    </div>
+    <nav class="right-bar"></nav>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Andrés Regalado Rosas
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
